@@ -20,7 +20,7 @@ class WooCommerceBlockTemplateExtensibility {
     public function add_custom_template() {
         include_once __DIR__ . '/custom-template.php';
         $template_registry = wc_get_container()->get( Automattic\WooCommerce\Internal\Admin\BlockTemplateRegistry\BlockTemplateRegistry::class );
-        $template_registry->register( 'namespace/my-custom-template', CustomTemplate::class );
+        $template_registry->register( new CustomTemplate() );
     }
 }
 
